@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      worker: worker
+  template:
+    metadata:
+      labels:
+        worker: worker
+    spec:
+      terminationGracePeriodSeconds: 0
+      containers:
+      - name: worker
+        image: worker-backend
+        imagePullPolicy: Never
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"     
+        ports:
+        - containerPort: 8080
+          name: gunicorn
