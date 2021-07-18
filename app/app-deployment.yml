@@ -15,7 +15,7 @@ spec:
       terminationGracePeriodSeconds: 0
       containers:
       - name: web
-        image: tranquility:new
+        image: api
         imagePullPolicy: Never
         resources:
           limits:

@@ -15,7 +15,7 @@ spec:
       terminationGracePeriodSeconds: 0
       containers:
       - name: worker
-        image: worker-backend
+        image: worker
         imagePullPolicy: Never
         resources:
           limits:
